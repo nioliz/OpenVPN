@@ -9,3 +9,5 @@ rm -rf /etc/openvpn/*; \
 rm -rf /var/lib/apt/lists/*
 
 WORKDIR /etc/openvpn
+
+ENTRYPOINT ["openvpn"]
