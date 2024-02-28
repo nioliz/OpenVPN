@@ -6,21 +6,25 @@ So, this image was created to solve this problem.
 
 docker run --rm --network=host -d --privileged -v <path_to_config_file>:/etc/openvpn/<config_file> nioliz/openvpn <config_file>
 
-## Example:
+### Example:
 
 ```
 docker run --rm --network=host -d --privileged -v /home/user/openvpn/userconf.ovpn:/etc/openvpn/userconf.ovpn nioliz/openvpn userconf.ovpn
 ```
 
-## Usage 2 (additional credentials are stored in separated file):
-### Getting listing of OpenVPN files:
+## Usage 2 
+Additional credentials are stored in separated file
+
+### Example:
+
+#### Getting listing of OpenVPN files:
 ```
 > ls /home/user/openvpn
 userconf.ovpn
 userpass.txt
 ```
 
-### Starting container:
+#### Starting container:
 ```
 > docker run --rm --network=host -d --privileged -v /home/user/openvpn:/etc/openvpn nioliz/openvpn userconf.ovpn --auth-user-pass userpass.txt
 ```
